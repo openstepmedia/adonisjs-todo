@@ -45,23 +45,34 @@ class TaskController extends BaseController {
   async delete ({ params, session, request, response }) {
     const data = Object.assign({}, params, request.all())
 
-    const task = await TaskRepository.delete(data)
+    await TaskService.delete(data)
 
     session.flash({ error: 'Task Deleted' })
 
     return response.redirect('/tasks')
   }  
 
- async update ({ params, session, request, response }) {
+  async update ({ params, session, request, response }) {
     const data = Object
       .assign({}, params, request.only(['name', 'note', 'completed']))
 
     const task = await TaskRepository.save(data)
 
-    session.flash({ success: 'Awesome!' })
-
-    return response.redirect('/tasks')
+    session.flash({ success: 'Task Updated!' })
+    
+    if(request.ajax()) {
+      return response.redirect('/tasks', false, 201)
+    }
+    else {
+      return response.redirect('/tasks')
+    }
   }  
+
+  async edit ({ params, view }) {
+    const task = await TaskService.firstOrFail(params.id)
+
+    return view.render('tasks.edit', { task: task.toJSON() })
+  }    
 }
 
 

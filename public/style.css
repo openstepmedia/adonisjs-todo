@@ -62,3 +62,11 @@ p.card-text {
 h6.card-title {
   font-weight:bold;
 }
+/**
+ * From bootsrap 3
+ * Needed for: https://github.com/DATA-DOG/bootstrap-modal-form/blob/master/modal.js
+ */
+.hidden {
+  display: none;
+  visibility: hidden;
+} 

@@ -20,6 +20,15 @@ class TaskService {
     const task = await TaskRepository.save(data)
     return task
   }
+
+  async delete(data) {
+    const task = await TaskRepository.delete(data)
+  }
+
+  async firstOrFail(id) {
+    const task = await Task.findOrFail(id)
+    return task
+  }
 }
 
 module.exports = TaskService

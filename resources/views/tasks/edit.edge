@@ -1,27 +1,23 @@
-@layout('layout.master')
+{{--
+Task edit is called via ajax with bootstrap model
 
-@section('content')
-  @set('title', 'Edit the post ' + post.id)
-  <div class="card">
-    <div class="card-body">
+see : https://github.com/DATA-DOG/bootstrap-modal-form
+--}}
 
-      {{--
-        We are here checking if the key 'error' is in the session.
-        If it is it means that our validation fails.
+<div class="modal-header">
+  <h5 class="modal-title">Edit Task: {{ task.id }}</h5>
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
 
-        ref: http://adonisjs.com/docs/4.0/sessions#_view_helpers
-        ref: http://edge.adonisjs.com/docs/conditionals#_if
-        --}}
-      @if(flashMessage('error'))
-        @component('components.alert', { type: 'danger', dismissible: true })
-          {{ flashMessage('error') }}
-        @endcomponent
-      @endif
-
-      <form action="/posts/{{ post.id }}?_method=PUT" method="POST">
-        @include('posts.partials.form')
-      </form>
-
-    </div>
+<form action="/tasks/{{ task.id }}?_method=PUT" method="POST" class="js-form">
+  <div class="modal-body">
+      @include('tasks.partials.form')
   </div>
-@endsection
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    <button type="submit" class="btn btn-primary">Save changes</button>
+  </div>
+</form>
