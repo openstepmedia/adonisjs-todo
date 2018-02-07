@@ -22,6 +22,12 @@ class TaskController extends BaseController {
       completed: await TaskRepository.getCountComplete(),
     }
 
+    /**
+     * Render the view 'tasks.index'
+     * with the tasks fetched as data.
+     *
+     * ref: http://adonisjs.com/docs/4.0/views
+     */    
     return view.render('tasks.index', { 
       tasks: tasks.toJSON(),
       stats: stats
@@ -29,6 +35,12 @@ class TaskController extends BaseController {
   }   
   
   async create ({ view }) {
+    /**
+     * Render the view 'tasks.create'
+     * This is not currently used
+     *
+     * ref: http://adonisjs.com/docs/4.0/views
+     */      
     return view.render('tasks.create')
   }
 
@@ -70,7 +82,12 @@ class TaskController extends BaseController {
 
   async edit ({ params, view }) {
     const task = await TaskService.firstOrFail(params.id)
-
+    /**
+     * Render the view 'tasks.edit'
+     * with the tasks fetched as data.
+     *
+     * ref: http://adonisjs.com/docs/4.0/views
+     */  
     return view.render('tasks.edit', { task: task.toJSON() })
   }    
 }
