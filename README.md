@@ -11,7 +11,7 @@ Adonisjs Todo app
 MVC framework for Node that's inspired by frameworks like Rails, Django and Laravel. Please checkout the official [AdonisJs repo](https://github.com/adonisjs/adonis-framework) and [Documentation](http://www.adonisjs.com/).
 
 
-## This project is insipred by the following projects:
+## Inspired by:
 
 * [adonisjs-todo](https://github.com/amineo/adonisjs-todo)
 * [adonisjs-hackathon-starter](https://github.com/iamraphson/adonisjs-hackathon-starter) project
