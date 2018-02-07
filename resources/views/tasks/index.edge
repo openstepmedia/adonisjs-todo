@@ -1,0 +1,67 @@
+@layout('layout.master')
+
+@section('content')
+  @set('title', 'Tasks')
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h1>AdonisJS Todo Notes</h1>
+        <h4>A simple example using AdonisJS</h4>
+
+        <div class="card">
+          <form action="/tasks" method="POST">
+          <div class="card-body">
+              @include('tasks.partials.form')
+          </div>
+          <div class="card-footer">
+            <button type="submit" class="btn btn-primary">Add Task</button>
+          </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h6 class="font-weight-bold">TASKS</h6>
+
+        <div class='list-bottom'>
+          <div class='list-bottom-section'>
+            <span>Active</span>
+            <span>{{  stats.active }}</span>
+          </div>
+          <div class='list-bottom-section'>
+            <span>Completed</span>
+            <span>{{  stats.completed }}</span>
+          </div>
+          <div class='list-bottom-section'>
+            <span>All</span>
+            <span>{{  stats.allTasks }}</span>
+          </div>
+        </div>     
+        
+        <hr>
+
+        @if(flashMessage('error'))
+	        @component('components.alert', { type: 'danger', dismissible: true })
+	          {{ flashMessage('error') }}
+	        @endcomponent
+	      @endif
+
+        @if(flashMessage('success'))
+	        @component('components.alert', { type: 'success', dismissible: true })
+	          {{ flashMessage('success') }}
+	        @endcomponent
+	      @endif
+
+        @each(task in tasks, include = 'tasks.partials.card')
+        @else
+          @component('components.alert', { type: 'info' })
+            No tasks available!
+          @endcomponent
+        @endeach 
+
+      </div>
+    </div>
+  </div>
+
+
+ 
+@endsection

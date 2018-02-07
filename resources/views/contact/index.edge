@@ -1,0 +1,54 @@
+@layout('layout.master')
+
+@section('content')
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h2>Contact Form</h2>
+			<hr>
+			@include('layout.alerts')
+			<form method="POST" action="{{ route('contact.send') }}">
+				{{ csrfField() }}
+				<div class="form-group row">
+					<label class="col-md-3 col-form-label" for="name">
+						Name
+					</label>
+					<div class="col-md-6">
+						<input type="text" name="name" placeholder="name" id="name"
+							class="form-control {{ elIf('is-invalid', getErrorFor('name'), hasErrorFor('name')) }}"
+							value="{{ old('name', '') }}" required>
+						<div class="invalid-feedback">{{ getErrorFor('name') }}</div>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label class="col-md-3 col-form-label" for="email">
+						E-Mail Address
+					</label>
+					<div class="col-md-6">
+						<input type="email" name="email" placeholder="email" id="email"
+							class="form-control {{ elIf('is-invalid', getErrorFor('email'), hasErrorFor('email')) }}"
+							value="{{ old('email', '') }}" required>
+						<div class="invalid-feedback">{{ getErrorFor('email') }}</div>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="message" class="col-md-3 control-label">Message</label>
+					<div class="col-md-6">
+						<textarea name="message" id="message" value="{{ old('message', '') }}" rows="7"
+								  class="form-control {{ elIf(' is-invalid', getErrorFor('message'), hasErrorFor('message')) }}" required></textarea>
+						<div class="invalid-feedback">{{ getErrorFor('message') }}</div>
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-md-3"></div>
+					<div class="col-md-6">
+						<button type="submit" class="btn btn-primary btn-block">
+							<i class="fa fa-btn fa-envelope"></i> Send
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+@endsection

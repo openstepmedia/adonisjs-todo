@@ -1,0 +1,71 @@
+{
+  "name": "adonisjs-todo",
+  "version": "1.0.0",
+  "adonis-version": "4.0.28",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node ace test",
+    "lint": "standard"
+  },
+  "keywords": [
+    "adonisjs",
+    "adonis-app"
+  ],
+  "author": "Seth Markowitz <seth@openstepmedia.com>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@adonisjs/ace": "^4.0.8",
+    "@adonisjs/ally": "^2.0.2",
+    "@adonisjs/auth": "^2.0.10",
+    "@adonisjs/bodyparser": "^2.0.0",
+    "@adonisjs/cors": "^1.0.3",
+    "@adonisjs/fold": "^4.0.5",
+    "@adonisjs/framework": "^4.0.28",
+    "@adonisjs/ignitor": "^1.0.14",
+    "@adonisjs/lucid": "^4.1.0",
+    "@adonisjs/mail": "^3.0.1",
+    "@adonisjs/session": "^1.0.19",
+    "@adonisjs/shield": "^1.0.5",
+    "@adonisjs/validator": "^5.0.0",
+    "@slack/client": "^3.16.0",
+    "async": "^2.5.0",
+    "blueimp-md5": "^2.10.0",
+    "cheerio": "^1.0.0-rc.2",
+    "clockwork": "^0.1.4",
+    "cloudinary": "^1.9.0",
+    "fbgraph": "^1.4.1",
+    "github": "^10.1.0",
+    "instagram-node": "^0.5.8",
+    "lastfm": "^0.9.2",
+    "lob": "^4.1.1",
+    "moment": "^2.18.1",
+    "mysql": "^2.14.1",
+    "node-foursquare": "^0.3.0",
+    "node-linkedin": "^0.5.6",
+    "paypal-rest-sdk": "^1.7.1",
+    "pg": "^7.3.0",
+    "rand-token": "^0.3.0",
+    "request": "^2.81.0",
+    "sqlite3": "^3.1.9",
+    "stripe": "^4.24.1",
+    "tumblr.js": "^1.1.1",
+    "twit": "^2.2.9"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.12",
+    "standard": "^10.0.3"
+  },
+  "standard": {
+    "globals": [
+      "use",
+      "make",
+      "_"
+    ]
+  },
+  "engines": {
+    "node": "8.1.x",
+    "npm": "5.4.X"
+  }
+}

@@ -1,0 +1,16 @@
+{{ csrfField() }}
+
+{{-- Connection Field --}}
+<div class="form-group">
+  <label for="connections"><strong>Name</strong></label>
+  <input class="form-control" id="name" type="text" name="name" placeholder="Task Name" value="{{ old('name', task.name || '') }}" autofocus>
+  <small id="nameHelp" class="form-text text-muted">What needs to be done?</small>
+  {{ elIf('<small class="form-text">$self</small>', getErrorFor('name'), hasErrorFor('name')) }}
+</div>
+
+<div class="form-group">
+  <label for="connections"><strong>Notes</strong> (optional)</label>
+  <textarea class="form-control" id="note" name="note">{{ old('note', task.note || '') }}</textarea>
+  <small id="nameHelp" class="form-text text-muted">Additional notes to help you complete your  task.</small>
+  {{ elIf('<small class="form-text">$self</small>', getErrorFor('note'), hasErrorFor('note')) }}
+</div>
