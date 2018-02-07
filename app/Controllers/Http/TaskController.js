@@ -49,6 +49,9 @@ class TaskController extends BaseController {
 
     const task = await TaskService.save(data)
 
+    /**
+     * ref: https://adonisjs.com/docs/4.0/sessions#_flash_messages
+     */
     session.flash({ success: 'Awesome!' })
 
     return response.redirect('/tasks')

@@ -47,20 +47,44 @@ class TaskRepository extends BaseRepository {
   async save(data) {
     if(data.id) {
       const task = await Task.findOrFail(data.id)
+
+      /**
+       * Rather than setting attributes manually, use fill or merge methods
+       * ref: https://adonisjs.com/docs/4.0/lucid#_inserts_updates
+       */
       task.merge(data)
+
       await task.save()
+
+      /**
+       * Alert all listeners
+       * ref: https://adonisjs.com/docs/4.0/events#_basic_example
+       */
       this.event.fire('task.updated', task)
+
       return task
+      
     } else {
       const task = await Task.create(data)
+
+      /**
+       * Alert all listeners
+       * ref: https://adonisjs.com/docs/4.0/events#_basic_example
+       */
       this.event.fire('task.created', task)
+
       return task
     }
   }
 
   async delete(data) {
     const task = await Task.findOrFail(data.id)
+
     await task.delete()
+      /**
+       * Alert all listeners
+       * ref: https://adonisjs.com/docs/4.0/events#_basic_example
+       */
     this.event.fire('task.deleted', task)
   }
 }
