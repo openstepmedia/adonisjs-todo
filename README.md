@@ -1,5 +1,5 @@
 
-![AdonisJS: ToDo App](https://raw.githubusercontent.com/amineo/adonisjs-todo/master/_blog-images/adonisjs-todo-notes.png)
+![AdonisJS: ToDo App](https://raw.githubusercontent.com/openstepmedia/adonisjs-todo/master/_blog_images/adonisjs-todo-screenshot.png)
 
 # adonisjs-todo
 Adonisjs Todo app 
