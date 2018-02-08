@@ -19,16 +19,16 @@
     "@adonisjs/ace": "^4.0.8",
     "@adonisjs/ally": "^2.0.2",
     "@adonisjs/auth": "^2.0.10",
-    "@adonisjs/bodyparser": "^2.0.0",
-    "@adonisjs/cors": "^1.0.3",
+    "@adonisjs/bodyparser": "^2.0.2",
+    "@adonisjs/cors": "^1.0.4",
     "@adonisjs/fold": "^4.0.5",
     "@adonisjs/framework": "^4.0.28",
     "@adonisjs/ignitor": "^1.0.14",
     "@adonisjs/lucid": "^4.1.0",
     "@adonisjs/mail": "^3.0.1",
-    "@adonisjs/session": "^1.0.19",
-    "@adonisjs/shield": "^1.0.5",
-    "@adonisjs/validator": "^5.0.0",
+    "@adonisjs/session": "^1.0.20",
+    "@adonisjs/shield": "^1.0.6",
+    "@adonisjs/validator": "^5.0.1",
     "@slack/client": "^3.16.0",
     "async": "^2.5.0",
     "blueimp-md5": "^2.10.0",
@@ -48,6 +48,7 @@
     "pg": "^7.3.0",
     "rand-token": "^0.3.0",
     "request": "^2.81.0",
+    "socket.io": "^2.0.4",
     "sqlite3": "^3.1.9",
     "stripe": "^4.24.1",
     "tumblr.js": "^1.1.1",
@@ -60,8 +61,7 @@
   "standard": {
     "globals": [
       "use",
-      "make",
-      "_"
+      "make"
     ]
   },
   "engines": {

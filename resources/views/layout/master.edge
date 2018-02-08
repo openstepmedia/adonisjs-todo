@@ -41,7 +41,11 @@
 		{{ script('https://code.jquery.com/jquery-3.1.1.min.js') }}
 		{{ script('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js') }}
 		{{ script('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js') }}
-		{{ script('https://rawgit.com/DATA-DOG/bootstrap-modal-form/master/modal.js')}}
+		{{ script('https://rawgit.com/DATA-DOG/bootstrap-modal-form/master/modal.js') }}
+		{{ script("https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js") }}
+
+		@!include('partials.scriptvars')
+
 		{{ script('/js/app.js') }}
 
 	</body>
