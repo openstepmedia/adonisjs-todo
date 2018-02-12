@@ -2,11 +2,16 @@
   "name": "adonisjs-todo",
   "version": "1.0.0",
   "adonis-version": "4.0.28",
+  "description": "AdonisJs Todo Demo Application",
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
     "test": "node ace test",
-    "lint": "standard"
+    "lint": "standard",
+    "build:dev": "NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "build:watch": "NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "build:hot": "NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "build:production": "NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "keywords": [
     "adonisjs",
@@ -32,6 +37,7 @@
     "@adonisjs/vow": "^1.0.15",
     "@slack/client": "^3.16.0",
     "async": "^2.5.0",
+    "bee-queue": "^1.2.2",
     "blueimp-md5": "^2.10.0",
     "cheerio": "^1.0.0-rc.2",
     "clockwork": "^0.1.4",
@@ -48,6 +54,8 @@
     "paypal-rest-sdk": "^1.7.1",
     "pg": "^7.3.0",
     "rand-token": "^0.3.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "request": "^2.81.0",
     "socket.io": "^2.0.4",
     "sqlite3": "^3.1.9",
@@ -56,8 +64,15 @@
     "twit": "^2.2.9"
   },
   "devDependencies": {
+    "babel-preset-react": "^6.24.1",
+    "bootstrap": "^4.0.0-beta.2",
+    "cross-env": "^5.1.1",
+    "jquery": "^3.2.1",
+    "laravel-mix": "^1.6.1",
     "nodemon": "^1.14.12",
-    "standard": "^10.0.3"
+    "popper.js": "^1.12.5",
+    "standard": "^10.0.3",
+    "webpack": "^3.11.0"
   },
   "standard": {
     "globals": [

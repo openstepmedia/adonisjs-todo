@@ -4,7 +4,11 @@
 |--------------------------------------------------------------------------
 | TaskController
 |--------------------------------------------------------------------------
+| This controller is attempting to use best practices by not including 
+| the underlying Model
 |
+| Note that all controller validation is being done at the Route level Validator
+| ref: https://adonisjs.com/docs/4.0/validator#_route_validator
 |
 */
 const BaseController = use('App/Controllers/Http/BaseController')
@@ -75,6 +79,9 @@ class TaskController extends BaseController {
 
     session.flash({ success: 'Task Updated!' })
     
+    /**
+     * Detect if the request is ajax or not
+     */
     if(request.ajax()) {
       return response.redirect('/tasks', false, 201)
     }
@@ -94,6 +101,5 @@ class TaskController extends BaseController {
     return view.render('tasks.edit', { task: task.toJSON() })
   }    
 }
-
 
 module.exports = TaskController

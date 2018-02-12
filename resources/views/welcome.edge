@@ -1,31 +1,47 @@
 @layout('layout.master')
 
 @section('content')
+@set('title', 'Welcome')
 <div class="container mb-4">
 	<h1 class="my-4">Todo Starter</h1>
 	<p class="lead">A boilerplate for AdonisJs web applications.</p>
 	<hr>
+        @loggedIn
 	<div class="row">
-		<div class="col-sm-6">
-			<h2>Heading</h2>
-			<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
-			<p><a class="btn btn-primary" href="#" role="button">View details ?</a></p>
-		</div>
-		<div class="col-sm-6">
-			<h2>Heading</h2>
-			<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
-			<p><a class="btn btn-primary" href="#" role="button">View details ?</a></p>
-		</div>
-		<div class="col-sm-6">
-			<h2>Heading</h2>
-			<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
-			<p><a class="btn btn-primary" href="#" role="button">View details ?</a></p>
-		</div>
-		<div class="col-sm-6">
-			<h2>Heading</h2>
-			<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
-			<p><a class="btn btn-primary" href="#" role="button">View details ?</a></p>
+		<div class="col-sm-12">
+			<h2>Welcome back!</h2>
+			<p>
+                            Get started managing todo items.
+                        </p>
+			<p><a class="btn btn-primary" href="/tasks" role="button">Manage Todo List</a></p>
 		</div>
 	</div>
+
+        @else
+	<div class="row">
+		<div class="col-sm-6">
+			<h2>New Customers Start Here</h2>
+			<p>
+                            Get started managing tasks.
+                        </p>
+			<p><a class="btn btn-primary" href="/register" role="button">Sign Up</a></p>
+		</div>
+		<div class="col-sm-6">
+			<h2>Already have an account?</h2>
+			<p>
+                            Continue on where you left off.
+                        </p>
+			<p><a class="btn btn-primary" href="/login" role="button">Sign in</a></p>
+		</div>
+	</div>
+        
+        @endloggedIn
+
+
+        {{-- ReactJS Demo --}}
+        {{-- This is probably not best practice / should be pushing the .js into a footer component --}}
+        <div id="reactdemo"></div>
+
+        {{ script('/js/reactdemo.js') }}
 </div>
 @endsection

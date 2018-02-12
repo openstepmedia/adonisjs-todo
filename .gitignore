@@ -10,6 +10,7 @@ storage/*
 
 # Environment files should be seperate for each environment
 .env
+.env.*
 .npm
 
 # Optional eslint cache

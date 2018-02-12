@@ -15,7 +15,7 @@
 		<link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#5bbad5">
 		<meta name="theme-color" content="#1b66b1">
 
-		<title>AdonisJs starter</title>
+		<title>{{ title }}</title>
 
 		<!-- Fonts -->
 		{{ css('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css') }}
@@ -43,22 +43,10 @@
 		{{ script('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js') }}
 		{{ script('https://rawgit.com/DATA-DOG/bootstrap-modal-form/master/modal.js') }}
 		{{ script("https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js") }}
-		{{ script('https://cdnjs.cloudflare.com/ajax/libs/react/16.2.0/umd/react.production.min.js') }}
 
+                <!-- dynamic system javascript variables -->
 		@!include('partials.scriptvars')
 
 		{{ script('/js/app.js') }}
-<!-- CSS -->
-<div id="root"></div>
-  <link rel="stylesheet" href="https://unpkg.com/react-table@latest/react-table.css">
-
-  <!-- JS -->
-  <script src="https://unpkg.com/react-table@latest/react-table.js"></script>
-
-  <script>
-    var ReactTable = window.ReactTable.default
-  </script>
-
-
 	</body>
 </html>
