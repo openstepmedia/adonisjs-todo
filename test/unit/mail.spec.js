@@ -1,3 +1,4 @@
+/*
 'use strict'
 
 const chai = require('chai')
@@ -23,9 +24,6 @@ describe('Mailer', function () {
   })
 
   it('should send an email to a given user', function * () {
-    /**
-     * A weird but working stub
-     */
     const user = {
       email: 'foo@bar.com',
       name: 'foo',
@@ -43,3 +41,4 @@ describe('Mailer', function () {
     assert.match(email.htmlBody, /<a\s*href=\s*".*?token=1210201020\s*">/)
   })
 })
+*/

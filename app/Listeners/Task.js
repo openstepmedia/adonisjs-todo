@@ -14,3 +14,10 @@ Task.deleted = async (data) => {
 Task.completed = async (data) => {
     console.log("EventListener: Task Completed id:", data.id)
 }
+Task.beforeCreate = async (data) => {
+    console.log("EventListener: Task Completed id:", data.id)
+}
+Task.afterCreate = async (data) => {
+    console.log("EventListener: Task Completed id:", data.id)
+    data.name += " afterCreateListener"
+}

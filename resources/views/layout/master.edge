@@ -43,10 +43,22 @@
 		{{ script('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js') }}
 		{{ script('https://rawgit.com/DATA-DOG/bootstrap-modal-form/master/modal.js') }}
 		{{ script("https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js") }}
+		{{ script('https://cdnjs.cloudflare.com/ajax/libs/react/16.2.0/umd/react.production.min.js') }}
 
 		@!include('partials.scriptvars')
 
 		{{ script('/js/app.js') }}
+<!-- CSS -->
+<div id="root"></div>
+  <link rel="stylesheet" href="https://unpkg.com/react-table@latest/react-table.css">
+
+  <!-- JS -->
+  <script src="https://unpkg.com/react-table@latest/react-table.js"></script>
+
+  <script>
+    var ReactTable = window.ReactTable.default
+  </script>
+
 
 	</body>
 </html>

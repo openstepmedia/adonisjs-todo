@@ -22,8 +22,13 @@ const Event = use('Event')
  * The listener that gets fired is app/Listeners/Task.js
  * 
  */
-Event.when('task.created', 'Task.created') 
+Event.when('Task::beforeCreate', 'Task.beforeCreate') 
+Event.when('Task::afterCreate', 'Task.afterCreate') 
 Event.when('task.updated', 'Task.updated') 
 Event.when('task.deleted', 'Task.deleted') 
+
 Event.when('task.completed', 'Task.completed') 
+
+Event.when('Setting.beforeCreate', 'Setting.beforeCreate') 
+Event.when('Setting.afterCreate', 'Setting.afterCreate') 
 
