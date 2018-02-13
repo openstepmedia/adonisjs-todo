@@ -8,7 +8,6 @@
 | ref: http://adonisjs.com/docs/4.1/exceptions
 |
 */
-const { HttpException } = require('@adonisjs/generic-exceptions')
 const BaseExceptionHandler = use('BaseExceptionHandler')
 const Env = use('Env')
 
