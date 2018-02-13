@@ -17,8 +17,12 @@ const globalMiddleware = [
   'Adonis/Middleware/Session',
   'Adonis/Middleware/Shield',
   'Adonis/Middleware/AuthInit',
-  // by me
-  'App/Middleware/ViewGlodalMiddleware'
+  'App/Middleware/ViewGlobalMiddleware',
+
+  /**
+   * ref: http://adonisjs.com/docs/4.1/middleware
+   */
+  'App/Middleware/CountryDetector'
 ]
 
 /*

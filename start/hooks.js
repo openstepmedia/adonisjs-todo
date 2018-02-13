@@ -8,7 +8,7 @@
 */
 
 const { hooks } = require('@adonisjs/ignitor')
-
+const moment = require('moment')
 
 hooks.after.providersBooted(() => {
   const View = use('View')
@@ -23,6 +23,11 @@ hooks.after.providersBooted(() => {
     return new Date().getTime()
   })
 
+  View.global('currentYear', () => {
+    return moment().format('YYYY')
+  })
+    
+    
   /**
    * Usage: {{ env('APP_URL') }}
    *

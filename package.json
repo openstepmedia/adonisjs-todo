@@ -43,6 +43,7 @@
     "clockwork": "^0.1.4",
     "cloudinary": "^1.9.0",
     "fbgraph": "^1.4.1",
+    "geoip-lite": "^1.2.1",
     "github": "^13.1.0",
     "instagram-node": "^0.5.8",
     "lastfm": "^0.9.2",

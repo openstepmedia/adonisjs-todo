@@ -1,0 +1,21 @@
+@layout('layout.master')
+
+@section('content')
+@set('title', title)
+<div class="container mb-4">
+	<h1 class="my-4">Sorry, the page you were looking for is not here...</h1>
+	<p class="lead">A boilerplate for AdonisJs web applications.</p>
+	<hr>
+	<div class="row">
+		<div class="col-sm-12">
+			<h2>Welcome back!</h2>
+			<p>
+                            Get started managing todo items.
+                        </p>
+			<p><a class="btn btn-primary" href="/tasks" role="button">Manage Todo List</a></p>
+		</div>
+	</div>
+<!-- ctx {{ ctx }} -->
+<!-- view {{ view }} -->
+</div>
+@endsection
