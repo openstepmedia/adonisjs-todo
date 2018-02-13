@@ -21,7 +21,7 @@ class CountryDetector {
        * local vm throws an error.
        * @type type
        */
-      console.error("Could not determine country for ip:" + ip + " error:", err)
+      //console.error("Could not determine country for ip:" + ip + " error:", err)
     }
     
     // call next to advance the request

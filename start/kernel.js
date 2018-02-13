@@ -10,6 +10,9 @@ const Server = use('Server')
 | Global middleware are executed on each http request only when the routes
 | match.
 |
+| Note that Middleware will NOT be available on 404 errors.
+| ref: https://adonisjs.com/docs/4.0/http-context
+|
 */
 const globalMiddleware = [
   'Adonis/Middleware/BodyParser',

@@ -14,6 +14,7 @@
 */
 
 const Route = use('Route')
+const Env = use('Env')
 
 Route.get('/', 'HomeController.index').as('welcomePage')
 
@@ -86,3 +87,7 @@ Route.group(() => {
 })
 
 Route.get('/api', async ({ view }) => view.render('api'))
+
+Route.get('/whoops', 'PageNotFoundController.index').as('pagenotfound')
+
+
