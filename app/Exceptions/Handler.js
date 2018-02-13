@@ -8,6 +8,7 @@
 | ref: http://adonisjs.com/docs/4.1/exceptions
 |
 */
+const { HttpException } = require('@adonisjs/generic-exceptions')
 const BaseExceptionHandler = use('BaseExceptionHandler')
 const Env = use('Env')
 
@@ -39,7 +40,7 @@ class ExceptionHandler extends BaseExceptionHandler {
     const args = [error, request, response, session, view, auth, req, res]
     
     args.forEach((arg) => {
-      console.log('name:' + arg.constructor.name)
+      console.log('name:' + arg.constructor.name + " typeof():" + typeof(arg))
       console.log(Object.keys(arg))
       console.log('==============================================')
     })
@@ -50,13 +51,18 @@ class ExceptionHandler extends BaseExceptionHandler {
      * 
      * In order for this to work, must set .env file key:
      * PAGE_NOT_FOUND_CONTROLLER=true
-     *
+     * 
+     * Must also add route to start/routes.js
+     * Route.get('/whoops', 'PageNotFoundController.index').as('pagenotfound')
+     * 
      * If the response.route() method is used, then all middleware will be available
+     * 
+     * Would be nicer to do :
+     * if(error instanceof HttpException) {}
+     * But this: https://stackoverflow.com/questions/33870684/why-doesnt-instanceof-work-on-instances-of-error-subclasses-under-babel-node
      */
-    if (error.status === 404) {
-      if(Env.get('PAGE_NOT_FOUND_CONTROLLER') === 'true') {
-        return response.route('pagenotfound', request.all())
-      }
+    if ('HttpException' === error.constructor.name && Env.get('PAGE_NOT_FOUND_CONTROLLER') === 'true') {
+      return response.route('pagenotfound', request.all())
 
       /*
        * Alternate implementation:
