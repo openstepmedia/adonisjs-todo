@@ -7,6 +7,7 @@ class TaskSchema extends Schema {
     this.create('tasks', (table) => {
       table.increments()
       
+      table.integer('user_id').unsigned()
       table.string('name')
       table.text('note')
       table.boolean('completed').defaultTo(false)

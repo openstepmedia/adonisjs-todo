@@ -35,6 +35,10 @@ class User extends Model {
   profile () {
     return this.hasMany('App/Models/UsersProfile', 'id', 'user_id')
   }
+  
+  tasks () {
+    return this.hasMany('App/Models/Task')
+  }
 }
 
 module.exports = User

@@ -44,7 +44,19 @@ class TaskRepository extends BaseRepository {
     return complete
   }
   
+  async getCountUserTasks(user_id) {
+    const userTasks = await Task
+        .query()
+        .where('user_id', user_id)
+        .getCount()
+      
+    return userTasks  
+  }
+  
   async save(data) {
+
+    console.log("data:%o", data)
+    
     if(data.id) {
       const task = await Task.findOrFail(data.id)
 

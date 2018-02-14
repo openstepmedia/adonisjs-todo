@@ -17,13 +17,14 @@ const TaskService = make('App/Services/TaskService')
 
 class TaskController extends BaseController {
 
-  async index ({ view }) {
+  async index ({ view, auth }) {
     const tasks = await TaskRepository.getCompleted()
 
     const stats = {
       allTasks: tasks.rows.length,
       active: await TaskRepository.getCountActive(),
       completed: await TaskRepository.getCountComplete(),
+      userTasks: await TaskRepository.getCountUserTasks(auth.user.id)
     }
 
     /**
@@ -48,9 +49,10 @@ class TaskController extends BaseController {
     return view.render('tasks.create')
   }
 
-  async store ({ session, request, response }) {
-    const data = request.only(['name', 'note'])
-
+  async store ({ session, request, response, params, auth }) {
+    const data = Object
+      .assign({user_id: auth.user.id}, request.only(['name', 'note']))
+    
     const task = await TaskService.save(data)
 
     /**
