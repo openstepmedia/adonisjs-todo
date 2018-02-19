@@ -38,9 +38,11 @@ module.exports = {
     | are set automatically and should be trusted. Apart from setting it
     | to true or false Adonis supports handful or ways to allow proxy
     | values. Read documentation for that.
-    |
+    | 
+    | ref: http://adonisjs.com/recipes/4.1/nginx-proxy
+    | trustProxy: false,
     */
-    trustProxy: false,
+    trustProxy: true,
 
     /*
     |--------------------------------------------------------------------------

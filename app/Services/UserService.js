@@ -49,7 +49,11 @@ class UserService {
   }
 
   async userResetPasswordExists (postData) {
-    const token = await Database.table('password_resets').where({'email': postData.email, 'token': postData.token}).first()
+    const token = await Database
+      .table('password_resets')
+      .where({'email': postData.email, 'token': postData.token})
+      .first()
+    
     if (token != null) {
       const isPast = await this.tokenExpired(token)
       return token && !isPast
@@ -63,7 +67,10 @@ class UserService {
   }
 
   async deleteResetToken (postData) {
-    await Database.table('password_resets').where({'email': postData.email, 'token': postData.token}).delete()
+    await Database
+      .table('password_resets')
+      .where({'email': postData.email, 'token': postData.token})
+      .delete()
   }
 
   async resetPassword (postData) {
@@ -91,7 +98,8 @@ class UserService {
 
   async findOrCreateUser (userData, provider) {
     const profile_ = await UsersProfile.query()
-      .where({'provider': provider, 'provider_id': userData.getId()}).first()
+      .where({'provider': provider, 'provider_id': userData.getId()})
+      .first()
     if (!(profile_ === null)) {
       const realUser = await profile_.user().fetch()
       return realUser

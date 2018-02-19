@@ -1,0 +1,23 @@
+@layout('layout.master')
+
+@section('content')
+@set('title', 'Welcome')
+<div class="container mb-4">
+	<h1 class="my-4">Form Test</h1>
+        <p>
+            Ref: {{ toAnchor('https://github.com/caolan/forms') }}
+        </p>
+
+        <h2>Regular Form</h2>
+        <form>
+        {{ form(fields,options) }}
+        </form>
+
+        <hr>
+
+        <h2>Bootstrap Form</h2>
+        <form>
+        {{ bsform(fields,options) }}
+        </form>
+</div>
+@endsection

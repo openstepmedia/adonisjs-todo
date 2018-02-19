@@ -4,7 +4,9 @@
 # adonisjs-todo
 Adonisjs Todo app 
 
-**Live Demo**: Coming soon
+**Live Demo**:
+[http://adonisjstodo.openstepmedia.com](http://adonisjstodo.openstepmedia.com)
+
 
 
 ## AdonisJs

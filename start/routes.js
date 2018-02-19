@@ -43,6 +43,9 @@ Route.post('/password/reset', 'Auth/PasswordController.reset').as('reset.passwor
 Route.get('/contact', 'ContactController.index').as('contact.show')
 Route.post('/contact', 'ContactController.sendMessage').as('contact.send')
 
+Route.get('/forms', 'FormsController.index')
+
+
 /**
  * Social Login Route
  */

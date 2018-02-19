@@ -28,6 +28,23 @@ class TaskStore {
       name: 'required'
     }
   }
+  
+  get data () {
+    const requestBody = this.ctx.request.all()
+    const sessionId = this.ctx.request.header('X-Session-Id')
+
+    //can inject data into request here....
+    console.log('ctx:%o', Object.keys(this.ctx))
+    console.log('auth:%o', this.ctx.auth.user)
+
+    const data = Object.assign({}, requestBody, { sessionId }, {user_id: this.ctx.auth.user.id})
+
+    return data
+  }
+  
+  async authorize () {
+    return true
+  }  
 }
 
 module.exports = TaskStore

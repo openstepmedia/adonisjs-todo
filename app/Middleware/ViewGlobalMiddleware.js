@@ -3,6 +3,9 @@ const moment = require('moment')
 const Env = use('Env')
 const View = use('View')
 
+//wrap up https://github.com/caolan/forms/tree/master/lib
+//import {string,number,email} from 'forms'
+
 /*
 |--------------------------------------------------------------------------
 | ViewGlobalMiddleware
@@ -35,14 +38,9 @@ class ViewGlobalMiddleware {
       return false
     })
 
-    View.global('hello', () => {
-      return 'Hello!!'
-    })    
-    
     View.global('env', function (key) {
-      console.log("get env for:" + key + " val:" + Env.get(key))
       return Env.get(key)
-    })    
+    }) 
   }
   
   async handle ({ request }, next) {
